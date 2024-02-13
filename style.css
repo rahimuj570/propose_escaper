@@ -1,0 +1,52 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Love Ya Like A Sister", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  width: 300px;
+  text-align: center;
+}
+#head_txt {
+  font-size: 30px;
+  font-weight: 700;
+  color: rgb(250, 154, 170);
+}
+#img {
+  width: 100%;
+}
+
+.btn {
+  padding: 5px 25px;
+  font-size: 24px;
+  transition: 0.8s;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#yes_btn {
+  margin-right: 10px;
+  background-color: rgb(250, 154, 170);
+}
+#yes_btn:hover {
+  background-color: rgb(102, 252, 33);
+}
+#no_btn {
+  margin-left: 10px;
+  background-color: rgb(250, 154, 170);
+}
+#no_btn:hover {
+  background-color: rgb(255, 0, 0);
+  color: white;
+}
