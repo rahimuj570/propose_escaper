@@ -115,8 +115,10 @@
         let me = targetGender ? "girl" : "boy";
 
         let org = location.origin.toString();
+        let path = location.pathname.toString();
         let url =
           org +
+          path +
           "/propose.html?" +
           "myName=" +
           myName +
