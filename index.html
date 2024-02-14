@@ -98,12 +98,15 @@
         <button class="btn" type="submit">Send Propose</button>
       </form>
     </div>
+    <input id="clipboard" />
     <p style="text-align: center; color: pink; padding: 2px">
       NOTE: "Name" fields are optional but you must select
-      <strong>he/her</strong> option!
+      <strong>his/her</strong> option!
     </p>
   </body>
   <script>
+    let c = document.getElementById("clipboard");
+    c.hidden = true;
     document
       .getElementsByClassName("card2")[0]
       .addEventListener("submit", (e) => {
@@ -119,15 +122,18 @@
         let url =
           org +
           path +
-          "/propose.html?" +
+          "propose.html?" +
           "myName=" +
           myName +
           "&lovedName=" +
           lovedName +
           "&me=" +
           me;
-
-        navigator.clipboard.writeText(url);
+        c.hidden = false;
+        c.value = url;
+        c.select();
+        document.execCommand("copy");
+        c.hidden = true;
         alert(
           "Propose link is copied in your clipboard\n   Now just past and send!!!"
         );
