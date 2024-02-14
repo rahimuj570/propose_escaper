@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Propose Escaper</title>
+    <link rel="shortcut icon" href="./img/fav.png" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
     <style>
       .card2 {
@@ -35,9 +36,11 @@
       .btn {
         background-color: rgb(250, 154, 170);
         transition: 0.5s;
+        margin: 0 2px;
+        font-size: 18px;
       }
       .btn:hover {
-        background-color: rgb(154, 207, 250);
+        background-color: rgb(250, 136, 155);
       }
       .title {
         color: rgb(250, 154, 170);
@@ -56,6 +59,9 @@
       }
       .main > input {
         margin-left: 10px;
+      }
+      #lovedName {
+        margin-top: 2px;
       }
     </style>
   </head>
@@ -107,10 +113,7 @@
         let targetGender = document.getElementById("gender").checked;
         let targetGender2 = document.getElementById("gender2").checked;
         let me = targetGender ? "girl" : "boy";
-        console.log(myName);
-        console.log(lovedName);
-        console.log(me);
-        console.log(targetGender2);
+
         let org = location.origin.toString();
         let url =
           org +
@@ -121,11 +124,21 @@
           lovedName +
           "&me=" +
           me;
-        console.log(url);
+
         navigator.clipboard.writeText(url);
         alert(
           "Propose link is copied in your clipboard\n   Now just past and send!!!"
         );
+
+        document.getElementsByClassName("btn")[0].style.backgroundColor =
+          "rgb(154, 207, 250)";
+        document.getElementsByClassName("btn")[0].innerText =
+          "Propose Link is Copied!";
+        setTimeout(() => {
+          document.getElementsByClassName("btn")[0].style.backgroundColor =
+            "rgb(250, 154, 170)";
+          document.getElementsByClassName("btn")[0].innerText = "Send Propose";
+        }, 3000);
       });
   </script>
 </html>

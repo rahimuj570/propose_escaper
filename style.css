@@ -6,12 +6,21 @@
   font-weight: 400;
   font-style: normal;
 }
+body {
+  position: relative;
+}
 
 .container {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px 0;
+}
+.bg-img {
+  opacity: 0.1;
+  position: absolute;
+  z-index: -1;
 }
 .card {
   width: 300px;
